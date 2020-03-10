@@ -1,63 +1,28 @@
-#include <iostream>
-#include <list>
-#include <vector>
-
-using namespace std; 
-
-class makeMatrix 
-{
-    protected:
-        vector<vector<double> > a2DArray;
-        int numberOfRows;
-        int numberOfCollumns;
-
-    public:
-
-        void setNumberOfRows(int row){
-            numberOfRows = row;
-        }
-
-        void setNumberOfCollumns(int col){
-            numberOfCollumns = col;
-        }
-
-        void resize()
-        {
-            a2DArray.resize(numberOfRows);
-
-            for (int i = 0; i < numberOfRows; ++i)
-            {
-                a2DArray[i].resize(numberOfCollumns);
-            }
-
-           
-        }
-
-        void checkSize()
-        {
-            cout << a2DArray.size() << endl;
-            cout << a2DArray[1].size() << endl;
-        }
-
-        void printMatrix()
-        {
-            for (int i = 0; i < numberOfCollumns; ++i)
-            {
-                for (int j = 0; i < numberOfRows; ++j)
-                {
-                     cout << a2DArray[i][j] << endl;
-                }
-
-            }
-        };
-};
+#include "Matrix.h"
+#include "RowVector.h"
+#include "ColVector.h"
 
 int main()
 {
-    makeMatrix mymatrix;
-    mymatrix.setNumberOfRows(3);
-    mymatrix.setNumberOfCollumns(5);
-    mymatrix.resize();
-    mymatrix.checkSize();
+    Matrix *myMatrix = new Matrix(3,3);
+    myMatrix->checkSize();
+    myMatrix->populate();
+    myMatrix->print2DVec();
 
+    cout << endl;
+
+    RowVector *myRow = new RowVector(3);
+    myRow->populate();
+    myRow->print2DVec();
+
+    cout << endl;
+
+    ColVector *myCol = new ColVector(3);
+    myCol->populate();
+    myCol->print2DVec();
+
+    return 0;
 }
+
+
+// how to remove pointers
