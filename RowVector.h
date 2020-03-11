@@ -1,3 +1,7 @@
+#ifndef ROWVECTOR_H
+#define ROWVECTOR_H
+
+
 #include <iostream>
 #include "Matrix.h"
 
@@ -8,3 +12,5 @@ class RowVector: public Matrix
     public:
         RowVector(int noOfColumns);
 };
+
+#endif

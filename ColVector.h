@@ -1,3 +1,6 @@
+#ifndef COLVECTOR_H
+#define COLVECTOR_H
+
 #include <iostream>
 #include "Matrix.h"
 
@@ -8,3 +11,5 @@ class ColVector: public Matrix
     public:
         ColVector(int numOfColumns);
 };
+
+#endif

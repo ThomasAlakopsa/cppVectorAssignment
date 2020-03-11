@@ -1,5 +1,5 @@
-#ifndef MAXTRIX_H
-#define MAXTRIX_H
+#ifndef MATRIX_H
+#define MATRIX_H
 
 #include <iostream>
 #include <list>
@@ -10,8 +10,9 @@ using namespace std;
 class Matrix
 {
     protected:
-
+    
         vector<vector<double> > a2DVector;
+
         int numberOfRows;
         int numberOfColumns;
 
