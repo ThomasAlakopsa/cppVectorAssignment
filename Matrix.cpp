@@ -61,3 +61,8 @@ void Matrix::populate()
         }
     }
 }
+
+vector<vector<double> > Matrix::get2DVector()
+{
+    return a2DVector;
+}

@@ -5,5 +5,4 @@
 
 using namespace std; 
 
-RowVector::RowVector(int numOfColumns):Matrix(1,numOfColumns){
-}
+RowVector::RowVector(int numOfColumns):Matrix(1,numOfColumns){}

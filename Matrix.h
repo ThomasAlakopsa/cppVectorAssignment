@@ -10,19 +10,19 @@ using namespace std;
 class Matrix
 {
     protected:
-
-        vector<vector<double> > a2DVector;
         int numberOfRows;
         int numberOfColumns;
-
         void resize();
         
     public:
         Matrix(int numOfRows, int numOfCols);
         
+        vector<vector<double> > a2DVector;
+
         void checkSize();
         void print2DVec();
         void populate();
+        vector<vector<double> > get2DVector();
         
 
 };
