@@ -9,7 +9,7 @@ Matrix::Matrix(int numOfRows, int numOfCols)
 {
     this->numberOfRows = numOfRows;
     this->numberOfColumns = numOfCols;
-    this->resize();
+    //this->resize();
 };
 
 void Matrix::resize()
@@ -53,6 +53,7 @@ void Matrix::checkSize()
 
 void Matrix::populate()
 {
+    this->resize();
     for (int i = 0; i < numberOfRows; i++)
     {
        
@@ -62,4 +63,14 @@ void Matrix::populate()
     
         }
     }
+}
+
+int Matrix::getNumOfRows()
+{
+    return numberOfColumns;
+} 
+
+int Matrix::getNumOfColumns()
+{
+    return numberOfRows;
 }

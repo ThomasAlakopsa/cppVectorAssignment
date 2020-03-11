@@ -6,21 +6,21 @@
 int main()
 {
     Matrix *myMatrix = new Matrix(3,3);
-    myMatrix->checkSize();
+    // myMatrix->checkSize();
     myMatrix->populate();
-    myMatrix->print2DVec();
+     myMatrix->print2DVec();
 
-    cout << endl;
+    // cout << endl;
 
-    //RowVector *myRow = new RowVector(3);
-    //myRow->populate();
+    // RowVector *myRow = new RowVector(6);
+    // myRow->populate();
     //myRow->print2DVec();
 
     //cout << endl;
 
-  /*  ColVector *myCol = new ColVector(3);
-    myCol->populate();
-    myCol->print2DVec();*/
+    // ColVector *myCol = new ColVector(3);
+    // myCol->populate();
+    // myCol->print2DVec();
 
     //MatrixMath foo = MatrixMath();
     //RowVector *x = foo.add2RowVectors(myRow, myRow);
