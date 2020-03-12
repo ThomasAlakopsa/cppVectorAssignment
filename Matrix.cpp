@@ -5,13 +5,19 @@
 
 using namespace std;
 
+/*
+create a matrix with a given number of rows and columns
+*/
 Matrix::Matrix(int numOfRows, int numOfCols)
 {
     this->numberOfRows = numOfRows;
     this->numberOfColumns = numOfCols;
-    //this->resize();
+    this->resize();
 };
 
+/*
+    resize the matrix
+*/
 void Matrix::resize()
 {
     a2DVector.resize(numberOfRows);
@@ -21,7 +27,10 @@ void Matrix::resize()
     }
 }
 
-void Matrix::print2DVec()
+/*
+    print the matrix in a good looking way
+*/
+void Matrix::print()
 {
     for (int i = 0; i < numberOfRows; i++){
         if (i != 0){
@@ -45,12 +54,30 @@ void Matrix::print2DVec()
         cout << endl;
     }
 }
+
+/*
+    help function to check the size of the matrix
+*/
+
 void Matrix::checkSize()
-{
-    cout << a2DVector.size() << endl;
-    cout << a2DVector[0].size() << endl;
+{   
+    cout << "columns: " << a2DVector.size() << endl;
+    cout << "rows: " << a2DVector[0].size() << endl;
+
 }
 
+/*
+    add a value in a specific location of the matrix
+*/
+void Matrix::add(int row, int col, double num)
+{
+    a2DVector[row][col] = num;
+}
+
+
+/*
+    fill the matrix with some data
+*/
 void Matrix::populate()
 {
     this->resize();
@@ -65,11 +92,13 @@ void Matrix::populate()
     }
 }
 
+// getter
 int Matrix::getNumOfRows()
 {
     return numberOfColumns;
 } 
 
+//getter
 int Matrix::getNumOfColumns()
 {
     return numberOfRows;

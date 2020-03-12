@@ -5,26 +5,31 @@
 
 int main()
 {
-    Matrix *myMatrix = new Matrix(3,3);
-    // myMatrix->checkSize();
-    myMatrix->populate();
-     myMatrix->print2DVec();
+    //Matrix *myMatrix = new Matrix(3,3);
+    //myMatrix->checkSize();
+    //myMatrix->populate();
+    //myMatrix->print2DVec();
 
-    // cout << endl;
 
-    // RowVector *myRow = new RowVector(6);
-    // myRow->populate();
-    //myRow->print2DVec();
 
-    //cout << endl;
+    MatrixMath math = MatrixMath(); //create math object
+    RowVector *myRow = new RowVector(6); //create pointer to new rowvector
+    myRow->populate(); // fill rowvector with data
+    myRow->print(); // display the data
 
-    // ColVector *myCol = new ColVector(3);
-    // myCol->populate();
-    // myCol->print2DVec();
+    
+    // create new pointer to a new row that contains the addition of myRow + myRow
+    RowVector *newRow = math.add2RowVectors(myRow, myRow);
+    newRow->print(); // display newRow
 
-    //MatrixMath foo = MatrixMath();
-    //RowVector *x = foo.add2RowVectors(myRow, myRow);
-    //x->print2DVec();
+    ColVector *myCol = new ColVector(5); //create pointer to new colvector
+    myCol->populate(); // fill columVec with data
+    myCol->print(); // print it
+
+
+    // create new pointer to a new row that contains the addition of myRow + myRow
+    ColVector *newCol = math.add2ColVectors(myCol, myCol);
+    newCol->print(); // print it
 
     return 0;
 }
