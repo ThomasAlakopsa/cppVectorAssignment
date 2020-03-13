@@ -22,8 +22,6 @@ if(rvec1->getNumOfRows() == rvec2->getNumOfRows())
       double num = rvec1->a2DVector[0][i] + rvec2->a2DVector[0][i];
       result->add(0, i, num); // adds them 
    }             
-}else{
-   //nothing
 }
 return result;
 }
@@ -47,10 +45,7 @@ ColVector* MatrixMath::add2ColVectors(ColVector *cvec1, ColVector *cvec2)
             double num = cvec1->a2DVector[i][0] + cvec2->a2DVector[i][0];
             result->add(i, 0, num); // adds them 
          }             
-   }else{
-      // nothing
    }
-
    return result;
 }
 
@@ -94,11 +89,8 @@ if(rvec1->getNumOfRows() == rvec2->getNumOfRows())
       double num = rvec1->a2DVector[0][i] - rvec2->a2DVector[0][i];
       result->add(0, i, num); // adds them 
    }             
-}else{
-   //nothing
 }
-
-   return result;
+ return result;
 }
 
 /********************************************
@@ -120,15 +112,12 @@ ColVector* MatrixMath::sub2ColVectors(ColVector *cvec1, ColVector *cvec2)
             double num = cvec1->a2DVector[i][0] - cvec2->a2DVector[i][0];
             result->add(i, 0, num); // adds them 
          }             
-   }else{
-      // nothing
    }
-
    return result;
 }
 
 /***************************************
- * function that adds 2 Matrixes
+ * function that subtracts 2 Matrixes
  * ************************************/
 
 Matrix* MatrixMath::sub2Matrixes( Matrix *matrix1, Matrix *matrix2)
@@ -144,6 +133,66 @@ Matrix* MatrixMath::sub2Matrixes( Matrix *matrix1, Matrix *matrix2)
             double num = matrix1->a2DVector[i][j] - matrix2->a2DVector[i][j];
             result->add(i,j,num);
          }
+      }
+   }
+   return result;
+}
+
+/****************************************************
+ * function that muliplies a rowvector with a double
+ * **************************************************/
+
+RowVector* MatrixMath::multiplyRowVector(RowVector *rvec, double multiplier)
+{
+   RowVector *result = new RowVector(rvec->getNumOfRows());
+   
+   // loops through each element and adds them in the new RowVector
+   for (int i = 0; i < rvec->getNumOfRows(); i++)
+   {
+      double num = rvec->a2DVector[0][i] * multiplier;
+      result->add(0, i, num); // adds them 
+   }             
+   return result;
+}
+
+
+
+
+/*******************************************************
+ * function that multiplies a columvector with a double
+ * *****************************************************/
+
+ColVector* MatrixMath::multiplyColVector(ColVector *cvec, double multiplier)
+{
+   ColVector *result = new ColVector(cvec->getNumOfColumns());
+
+   // loops through each element and adds them in the new ColumVector
+   for (int i = 0; i < cvec->getNumOfColumns(); i++)
+   {
+      double num = cvec->a2DVector[i][0] * multiplier;
+      result->add(i, 0, num); // adds them 
+   }             
+
+   return result;
+}
+
+
+
+
+/**************************************************
+ * function that multiplies a matrix with a double
+ * ************************************************/
+
+Matrix* MatrixMath::multiplyMatrix(Matrix *matrix1, double multiplier)
+{
+   Matrix *result = new Matrix(matrix1->getNumOfRows(), matrix1->getNumOfColumns());
+
+   for(int i = 0; i < matrix1->getNumOfRows(); i++)
+   {
+      for(int j = 0; j < matrix1->getNumOfColumns(); j++)
+      {
+         double num = matrix1->a2DVector[i][j] * multiplier;
+         result->add(i,j,num);
       }
    }
    return result;
