@@ -21,8 +21,12 @@ class Matrix
        
         Matrix(int numOfRows, int numOfCols); //create matrix of x . y size
 
-        void add(int row, int col, double num);//add data on specific position
+        Matrix operator + (Matrix const obj);
+        Matrix operator - (Matrix const obj);
+        Matrix operator * (double const multiplier);
 
+        void add(int row, int col, double num);//add data on specific position
+        
         void resize(); 
         void checkSize(); 
         void print(); 

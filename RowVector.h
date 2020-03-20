@@ -10,7 +10,10 @@ using namespace std;
 class RowVector: public Matrix
 {
     public:
-        RowVector(int noOfColumns);
+        RowVector(int numOfColumns);
+        RowVector operator + (RowVector const obj);
+        RowVector operator - (RowVector const obj);
+        RowVector operator * (double const multiplier);
 };
 
 #endif

@@ -32,14 +32,22 @@ void Matrix::resize()
 */
 void Matrix::print()
 {
-    for (int i = 0; i < numberOfRows; i++){
-        if (i != 0){
-            for (int j = 0; j < numberOfColumns; j++){
-                if(abs(a2DVector[i][j]) > 999){
+    for (int i = 0; i < numberOfRows; i++)
+    {
+        if (i != 0)
+        {
+            for (int j = 0; j < numberOfColumns; j++)
+            {
+                if (abs(a2DVector[i][j]) > 999)
+                {
                     cout << "---";
-                }else if(abs(a2DVector[i][j]) > 99){
+                }
+                else if (abs(a2DVector[i][j]) > 99)
+                {
                     cout << "--";
-                }else if(abs(a2DVector[i][j]) > 9){
+                }
+                else if (abs(a2DVector[i][j]) > 9)
+                {
                     cout << "-";
                 }
                 cout << "----";
@@ -48,7 +56,8 @@ void Matrix::print()
         }
         cout << "| ";
 
-        for (int j = 0; j < numberOfColumns; j++){
+        for (int j = 0; j < numberOfColumns; j++)
+        {
             cout << a2DVector[i][j] << " | ";
         }
         cout << endl;
@@ -60,10 +69,9 @@ void Matrix::print()
 */
 
 void Matrix::checkSize()
-{   
+{
     cout << "columns: " << a2DVector.size() << endl;
     cout << "rows: " << a2DVector[0].size() << endl;
-
 }
 
 /*
@@ -74,7 +82,6 @@ void Matrix::add(int row, int col, double num)
     a2DVector[row][col] = num;
 }
 
-
 /*
     fill the matrix with some data
 */
@@ -83,11 +90,10 @@ void Matrix::populate()
     this->resize();
     for (int i = 0; i < numberOfRows; i++)
     {
-       
+
         for (int j = 0; j < numberOfColumns; j++)
         {
-            a2DVector[i][j] = i*numberOfColumns+j;
-    
+            a2DVector[i][j] = i * numberOfColumns + j;
         }
     }
 }
@@ -96,10 +102,64 @@ void Matrix::populate()
 int Matrix::getNumOfRows()
 {
     return numberOfColumns;
-} 
+}
 
 //getter
 int Matrix::getNumOfColumns()
 {
     return numberOfRows;
+}
+
+Matrix Matrix::operator+(Matrix const obj)
+{
+
+    Matrix result = Matrix(numberOfRows, obj.numberOfRows);
+
+    if (numberOfRows == obj.numberOfRows && numberOfColumns == obj.numberOfColumns)
+    {
+        for (int i = 0; i < numberOfRows; i++)
+        {
+            for (int j = 0; j < numberOfColumns; j++)
+            {
+                double num = a2DVector[i][j] + obj.a2DVector[i][j];
+                result.add(i, j, num);
+            }
+        }
+    }
+    return result;
+}
+
+Matrix Matrix::operator-(Matrix const obj)
+{
+
+    Matrix result = Matrix(numberOfRows, obj.numberOfRows);
+
+    if (numberOfRows == obj.numberOfRows && numberOfColumns == obj.numberOfColumns)
+    {
+        for (int i = 0; i < numberOfRows; i++)
+        {
+            for (int j = 0; j < numberOfColumns; j++)
+            {
+                double num = a2DVector[i][j] - obj.a2DVector[i][j];
+                result.add(i, j, num);
+            }
+        }
+    }
+    return result;
+}
+
+Matrix Matrix::operator*(double const multiplier)
+{
+
+    Matrix result = Matrix(numberOfRows, numberOfColumns);
+
+    for (int i = 0; i < numberOfRows; i++)
+    {
+        for (int j = 0; j < numberOfColumns; j++)
+        {
+            double num = a2DVector[i][j] * multiplier;
+            result.add(i, j, num);
+        }
+    }
+    return result;
 }
