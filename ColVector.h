@@ -14,6 +14,8 @@ public:
     ColVector operator + (ColVector const obj);
     ColVector operator - (ColVector const obj);
     ColVector operator * (double const num);
+    double dotProduct(ColVector const obj);
+    ColVector crossProduct(ColVector const obj);
 };
 
 #endif

@@ -56,3 +56,33 @@ ColVector ColVector::operator * (double const multiplier)
    }             
    return result;
 }
+
+double ColVector::dotProduct(ColVector const obj)
+{
+    double result = 0;
+
+    if (numberOfRows == obj.numberOfRows)
+    {
+        for (int i = 0; i < numberOfRows; i++)
+        {
+            double num = a2DVector[i][0] * obj.a2DVector[i][0];
+            result += num;
+        }
+    }
+    return result;
+}
+
+ColVector ColVector::crossProduct(ColVector const obj)
+{
+   int size = 3;
+    ColVector result = ColVector(size);
+
+    double num = a2DVector[1][0] * obj.a2DVector[2][0] - a2DVector[2][0]* obj.a2DVector[1][0];
+    result.add(0,0,num);
+    num = -(a2DVector[0][0] * obj.a2DVector[2][0] - a2DVector[2][0]* obj.a2DVector[0][0]);
+    result.add(1,0,num);
+    num = a2DVector[0][0] * obj.a2DVector[1][0] - a2DVector[1][0]* obj.a2DVector[0][0];
+    result.add(2,0,num);
+
+    return result;
+}

@@ -164,21 +164,6 @@ Matrix Matrix::operator*(double const multiplier)
     return result;
 }
 
-// Matrix Matrix::transpose(Matrix const obj)
-// {
-//     Matrix result = Matrix(obj.numberOfColumns, obj.numberOfRows); // new matrix with swaped size
-
-//     for(int i = 0; i < obj.numberOfRows; ++i)
-//     {
-//         for(int j = 0; j < obj.numberOfColumns; ++j)
-//         {
-//             double num = obj.a2DVector[i][j];
-//             result.add(i,j,num);
-//         }
-//     }
-//     return result;
-// }
-
 Matrix Matrix::transpose()
 {
     Matrix result = Matrix(numberOfColumns, numberOfRows); // new matrix with swaped size

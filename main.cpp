@@ -82,17 +82,64 @@ int main()
     // newCol3.print();
     // cout << endl;
 
+    /***************
+     * Transpose
+     * *************/
     
     // Matrix matrixToTranspose = Matrix(4,6);
     // matrixToTranspose.populate();
     // Matrix transposedMatrix = matrixToTranspose.transpose();
     // transposedMatrix.print();
 
-    RowVector RVtoTranspose = RowVector(5);
-    RVtoTranspose.populate();
-    RVtoTranspose.print();
-    ColVector transposedRow = RVtoTranspose.transpose();
-    transposedRow.print();
+    /***************
+     * dot product
+     * *************/
+
+    // RowVector DPv1 = RowVector(4);
+    // DPv1.populate();
+    // double dotproduct = DPv1.dotProduct(DPv1);
+    // cout << dotproduct << endl;
+
+    // ColVector DPv2 = ColVector(4);
+    // DPv2.populate();
+    // double dotproduct2 = DPv2.dotProduct(DPv2);
+    // cout << dotproduct2 << endl;
+
+    /*********************
+    * cross product
+    * ********************/
+
+    RowVector CPvector1 = RowVector(3);
+    CPvector1.add(0,0,3);
+    CPvector1.add(0,1,5);
+    CPvector1.add(0,2,-7);
+    CPvector1.print();
+
+    RowVector CPvector2 = RowVector(3);
+    CPvector2.add(0,0,2);
+    CPvector2.add(0,1,-6);
+    CPvector2.add(0,2,4);
+    CPvector2.print();
+
+    RowVector crossProduct1 = CPvector1.crossProduct(CPvector2);
+    crossProduct1.print();
+
+    ColVector CPvector3 = ColVector(3);
+    CPvector3.add(0,0,3);
+    CPvector3.add(1,0,5);
+    CPvector3.add(2,0,-7);
+    CPvector3.print();
+    cout << endl;
+
+    ColVector CPvector4 = ColVector(3);
+    CPvector4.add(0,0,2);
+    CPvector4.add(1,0,-6);
+    CPvector4.add(2,0,4);
+    CPvector4.print();
+    cout << endl;
+
+    ColVector crossProduct2 = CPvector3.crossProduct(CPvector4);
+    crossProduct2.print();
 
     return 0;
 }

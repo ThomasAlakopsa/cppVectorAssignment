@@ -58,14 +58,32 @@ RowVector RowVector::operator * (double const multiplier)
    return result;
 }
 
-ColVector RowVector::transpose()
+double RowVector::dotProduct(RowVector const obj)
 {
-    ColVector result = ColVector(numberOfColumns);
+    double result = 0;
 
-    for(int i = 0; i < numberOfColumns; i++)
+    if (numberOfColumns == obj.numberOfColumns)
     {
-        double num = a2DVector[0][i];
-        result.add(i,0,num);
+        for (int i = 0; i < numberOfColumns; i++)
+        {
+            double num = a2DVector[0][i] * obj.a2DVector[0][i];
+            result += num;
+        }
     }
+    return result;
+}
+
+RowVector RowVector::crossProduct(RowVector const obj)
+{
+    int size = 3;
+    RowVector result = RowVector(size);
+
+    double num = a2DVector[0][1] * obj.a2DVector[0][2] - a2DVector[0][2]* obj.a2DVector[0][1];
+    result.add(0,0,num);
+    num = -(a2DVector[0][0] * obj.a2DVector[0][2] - a2DVector[0][2]* obj.a2DVector[0][0]);
+    result.add(0,1,num);
+    num = a2DVector[0][0] * obj.a2DVector[0][1] - a2DVector[0][1]* obj.a2DVector[0][0];
+    result.add(0,2,num);
+
     return result;
 }
