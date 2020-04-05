@@ -1,11 +1,12 @@
 #ifndef ROWVECTOR_H
 #define ROWVECTOR_H
 
-
 #include <iostream>
 #include "Matrix.h"
 
 using namespace std;
+
+class ColVector; // so transpose knows what Colvector is
 
 class RowVector: public Matrix
 {
@@ -16,6 +17,7 @@ class RowVector: public Matrix
         RowVector operator * (double const multiplier);
         double dotProduct(RowVector const obj);
         RowVector crossProduct(RowVector const obj);
+        ColVector transpose();
         
 };
 

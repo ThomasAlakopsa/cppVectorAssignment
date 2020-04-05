@@ -91,6 +91,17 @@ int main()
     // Matrix transposedMatrix = matrixToTranspose.transpose();
     // transposedMatrix.print();
 
+    // ColVector Tcv = ColVector(4);
+    // Tcv.populate();
+    // RowVector result = Tcv.transpose();
+    // result.print();
+
+    // RowVector Trv = RowVector(4);
+    // Trv.populate();
+    // ColVector result2 = Trv.transpose();
+    // result2.print();
+
+
     /***************
      * dot product
      * *************/
@@ -109,37 +120,37 @@ int main()
     * cross product
     * ********************/
 
-    RowVector CPvector1 = RowVector(3);
-    CPvector1.add(0,0,3);
-    CPvector1.add(0,1,5);
-    CPvector1.add(0,2,-7);
-    CPvector1.print();
+    // RowVector CPvector1 = RowVector(3);
+    // CPvector1.add(0,0,3);
+    // CPvector1.add(0,1,5);
+    // CPvector1.add(0,2,-7);
+    // CPvector1.print();
 
-    RowVector CPvector2 = RowVector(3);
-    CPvector2.add(0,0,2);
-    CPvector2.add(0,1,-6);
-    CPvector2.add(0,2,4);
-    CPvector2.print();
+    // RowVector CPvector2 = RowVector(3);
+    // CPvector2.add(0,0,2);
+    // CPvector2.add(0,1,-6);
+    // CPvector2.add(0,2,4);
+    // CPvector2.print();
 
-    RowVector crossProduct1 = CPvector1.crossProduct(CPvector2);
-    crossProduct1.print();
+    // RowVector crossProduct1 = CPvector1.crossProduct(CPvector2);
+    // crossProduct1.print();
 
-    ColVector CPvector3 = ColVector(3);
-    CPvector3.add(0,0,3);
-    CPvector3.add(1,0,5);
-    CPvector3.add(2,0,-7);
-    CPvector3.print();
-    cout << endl;
+    // ColVector CPvector3 = ColVector(3);
+    // CPvector3.add(0,0,3);
+    // CPvector3.add(1,0,5);
+    // CPvector3.add(2,0,-7);
+    // CPvector3.print();
+    // cout << endl;
 
-    ColVector CPvector4 = ColVector(3);
-    CPvector4.add(0,0,2);
-    CPvector4.add(1,0,-6);
-    CPvector4.add(2,0,4);
-    CPvector4.print();
-    cout << endl;
+    // ColVector CPvector4 = ColVector(3);
+    // CPvector4.add(0,0,2);
+    // CPvector4.add(1,0,-6);
+    // CPvector4.add(2,0,4);
+    // CPvector4.print();
+    // cout << endl;
 
-    ColVector crossProduct2 = CPvector3.crossProduct(CPvector4);
-    crossProduct2.print();
+    // ColVector crossProduct2 = CPvector3.crossProduct(CPvector4);
+    // crossProduct2.print();
 
     return 0;
 }

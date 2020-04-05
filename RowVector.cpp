@@ -87,3 +87,15 @@ RowVector RowVector::crossProduct(RowVector const obj)
 
     return result;
 }
+
+ColVector RowVector::transpose()
+{
+    ColVector result = ColVector(numberOfColumns);
+    
+    for(int i = 0; i < numberOfColumns; i++)
+        {
+            double num = a2DVector[0][i];
+            result.add(i,0,num); // swap j and i for the correct postion of the transpose
+        }
+    return result;
+}

@@ -2,6 +2,7 @@
 #include <list>
 #include <vector>
 #include "ColVector.h"
+#include "RowVector.h"
 
 
 using namespace std; 
@@ -85,4 +86,17 @@ ColVector ColVector::crossProduct(ColVector const obj)
     result.add(2,0,num);
 
     return result;
+}
+
+RowVector ColVector::transpose()
+{
+   RowVector result = RowVector(numberOfRows);
+   
+   for(int i = 0; i < numberOfRows; i++)
+      {
+         double num = a2DVector[i][0];
+         result.add(0,i,num); // swap j and i for the correct postion of the transpose
+      }
+      
+   return result;
 }
