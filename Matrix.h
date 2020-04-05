@@ -24,6 +24,7 @@ class Matrix
         Matrix operator + (Matrix const obj);
         Matrix operator - (Matrix const obj);
         Matrix operator * (double const multiplier);
+        Matrix transpose();
 
         void add(int row, int col, double num);//add data on specific position
         
