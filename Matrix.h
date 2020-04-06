@@ -20,11 +20,13 @@ class Matrix
     public:
        
         Matrix(int numOfRows, int numOfCols); //create matrix of x . y size
+        Matrix(); // default constructor
 
         Matrix operator + (Matrix const obj);
         Matrix operator - (Matrix const obj);
         Matrix operator * (double const multiplier);
         Matrix transpose();
+        Matrix multiply(Matrix obj);
 
         void add(int row, int col, double num);//add data on specific position
         

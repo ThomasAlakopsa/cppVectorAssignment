@@ -178,3 +178,31 @@ Matrix Matrix::transpose()
     }
     return result;
 }
+
+Matrix Matrix::multiply(Matrix const obj)
+{
+    Matrix result = Matrix(numberOfRows, obj.numberOfColumns);
+    double num = 0;
+
+    if(numberOfColumns == obj.numberOfRows)
+    {
+        for(int i = 0; i < numberOfRows; i++)
+        {
+            for(int j = 0; j < obj.numberOfColumns; j++)
+            {
+                for(int l = 0; l < obj.numberOfRows; l++)
+                {
+                    num += a2DVector[i][l] * obj.a2DVector[l][j];
+                }
+                result.a2DVector[i][j] = num;
+                num = 0;
+            }
+        }
+    }else
+    {
+        cout << "Matrix is not the right size!" << endl;
+    }
+
+    return result;
+    
+}

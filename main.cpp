@@ -152,6 +152,20 @@ int main()
     // ColVector crossProduct2 = CPvector3.crossProduct(CPvector4);
     // crossProduct2.print();
 
+    /*************************
+     * Matrix Multiplication
+     * **********************/
+
+    Matrix mm1 = Matrix(2,3);
+    mm1.populate();
+    Matrix mm2 = Matrix(3,2);
+    mm2.populate();
+
+    Matrix mmResult = mm1.multiply(mm2);
+    mmResult.print();
+
+    
+
     return 0;
 }
 
