@@ -11,13 +11,15 @@ class RowVector; // so transpose knows what RowVector is
 class ColVector : public Matrix
 {
     public:
-        ColVector(int numOfRows);
-        ColVector operator + (ColVector const obj);
-        ColVector operator - (ColVector const obj);
-        ColVector operator * (double const num);
-        double dotProduct(ColVector const obj);
-        ColVector crossProduct(ColVector const obj);
-        RowVector transpose();
+        ColVector(int numOfRows); // contruct a ColVector with N rows and 1 collumn
+
+        ColVector operator + (ColVector const obj); // add two collumn Vectors together
+        ColVector operator - (ColVector const obj); // subtract two collumn vectors 
+        ColVector operator * (double const num); // multiply a collumn vector with a double
+
+        double dotProduct(ColVector const obj); // return the dot product from a collumn vector
+        ColVector crossProduct(ColVector const obj); // return the cross product from a collumns vector
+        RowVector transpose(); // tranpose a Colvector, this always results in a row Vector
     };
 
 #endif

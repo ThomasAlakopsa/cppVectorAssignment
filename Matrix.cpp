@@ -206,3 +206,60 @@ Matrix Matrix::multiply(Matrix const obj)
     return result;
     
 }
+
+void Matrix::swapRowsInMatrix(int r1, int r2) 
+{ 
+    for (int i=0; i<=numberOfRows; i++) 
+    { 
+        double num = a2DVector[r1][i]; 
+        a2DVector[r1][i] = a2DVector[r2][i]; 
+        a2DVector[r2][i] = num; 
+    } 
+}
+
+void Matrix::orderForForwardElimination(int col)
+{
+    
+    for(int i = 0; i < numberOfRows; i++)
+    {
+        int i_max = i; 
+        int v_max = a2DVector[i_max][i]; 
+  
+        /* find greater amplitude for pivot if any */
+        for (int j = i+1; j < numberOfRows; j++) 
+            if (abs(a2DVector[j][i]) > v_max) 
+                v_max = a2DVector[j][i], i_max = j; 
+
+        /* Swap the greatest value row with current row */
+        if (i_max != i) 
+            swapRowsInMatrix(i, i_max); 
+    }  
+}
+
+
+void Matrix::forwardElimination()
+{
+    int numberOfSteps = numberOfRows-1;
+    int foo = 2;
+
+    for(int steps = 0; steps < numberOfRows-1; steps++)
+    {
+        orderForForwardElimination(steps);
+        foo-=1;
+        
+        for(int i = 0; i < numberOfSteps; i++)
+        {
+            double multiplier = a2DVector[foo][steps] / a2DVector[steps][steps];
+
+            for(int j = 0; j < numberOfColumns;j++)
+            {
+                double temp = a2DVector[steps][j] * multiplier;
+                a2DVector[foo][j]-=temp;
+            } 
+            foo+=1;
+        }
+       
+        numberOfSteps-=1;
+    }
+
+}

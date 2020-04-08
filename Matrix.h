@@ -18,22 +18,27 @@ class Matrix
     friend class MatrixMath;
 
     public:
-       
+
+        Matrix(); // default constructor   
         Matrix(int numOfRows, int numOfCols); //create matrix of x . y size
-        Matrix(); // default constructor
+    
+        Matrix operator + (Matrix const obj);  // add two matrixes
+        Matrix operator - (Matrix const obj);  // subtract two matrixes
+        Matrix operator * (double const multiplier);    // muliply matrixes with a double
 
-        Matrix operator + (Matrix const obj);
-        Matrix operator - (Matrix const obj);
-        Matrix operator * (double const multiplier);
-        Matrix transpose();
-        Matrix multiply(Matrix obj);
-
-        void add(int row, int col, double num);//add data on specific position
+        Matrix transpose(); // transpose current matrix
+        Matrix multiply(Matrix obj);  // multiply two matrixes
         
-        void resize(); 
-        void checkSize(); 
-        void print(); 
-        void populate(); // fill matrix with data
+        void swapRowsInMatrix(int r1, int r2);
+        void orderForForwardElimination(int col);
+        void forwardElimination();
+
+        void add(int row, int col, double num); //add data on specific position
+        
+        void resize(); // resize the 2Dvector
+        void checkSize(); // check size 
+        void print(); // print the matrix in a clear way
+        void populate(); // fill matrix with test data, this is always incrementing
 
         int getNumOfRows(); //getter
         int getNumOfColumns(); //getter

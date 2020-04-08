@@ -156,16 +156,29 @@ int main()
      * Matrix Multiplication
      * **********************/
 
-    Matrix mm1 = Matrix(2,3);
-    mm1.populate();
-    Matrix mm2 = Matrix(3,2);
-    mm2.populate();
+    // Matrix mm1 = Matrix(2,3);
+    // mm1.populate();
+    // Matrix mm2 = Matrix(3,2);
+    // mm2.populate();
 
-    Matrix mmResult = mm1.multiply(mm2);
-    mmResult.print();
+    // Matrix mmResult = mm1.multiply(mm2);
+    // mmResult.print();
+
+    /*************************
+     * Gaussian elimination
+     * ***********************/
+
+    Matrix gaus = Matrix(3,3+1);
+    gaus.add(0,0,25); gaus.add(0,1,5); gaus.add(0,2,1); gaus.add(0,3,106.8);
+    gaus.add(1,0,64); gaus.add(1,1,8); gaus.add(1,2,1); gaus.add(1,3,177.2);
+    gaus.add(2,0,144); gaus.add(2,1,12); gaus.add(2,2,1); gaus.add(2,3,279.2);
+    gaus.print();
+    cout << endl;
+    gaus.orderForForwardElimination(0);
+    gaus.forwardElimination();
+    gaus.print();
 
     
-
     return 0;
 }
 
