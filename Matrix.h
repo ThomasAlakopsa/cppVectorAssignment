@@ -5,7 +5,10 @@
 #include <list>
 #include <vector>
 
+
 using namespace std; 
+
+class ColVector;
 
 class Matrix
 {
@@ -15,8 +18,6 @@ class Matrix
         int numberOfRows = 0;
         int numberOfColumns = 0;
        
-    friend class MatrixMath;
-
     public:
 
         Matrix(); // default constructor   
@@ -32,6 +33,7 @@ class Matrix
         void swapRowsInMatrix(int r1, int r2);
         void orderForForwardElimination(int col);
         void forwardElimination();
+        ColVector backSubstitution();
 
         void add(int row, int col, double num); //add data on specific position
         

@@ -2,6 +2,7 @@
 #include <list>
 #include <vector>
 #include "Matrix.h"
+#include "ColVector.h"
 
 using namespace std;
 
@@ -262,4 +263,28 @@ void Matrix::forwardElimination()
         numberOfSteps-=1;
     }
 
+}
+
+ColVector Matrix::backSubstitution()
+{
+    ColVector result = ColVector(numberOfRows);
+
+    for(int i = numberOfRows-1; i >= 0; i--)
+    {
+        cout << "i: " << i << endl;
+
+        double num = a2DVector[i][numberOfRows];
+        result.add(i,0,num);
+
+        for(int j = i+1; j<numberOfRows;j++)
+        {
+            if(i!=j)
+            {
+                result.a2DVector[i][0] = result.a2DVector[i][0] - a2DVector[i][j] *  result.a2DVector[j][0];
+            }
+        }
+        result.a2DVector[i][0] = result.a2DVector[i][0]/a2DVector[i][i];
+    }
+
+    return result;
 }

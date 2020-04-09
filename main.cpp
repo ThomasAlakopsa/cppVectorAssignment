@@ -177,6 +177,9 @@ int main()
     gaus.orderForForwardElimination(0);
     gaus.forwardElimination();
     gaus.print();
+    ColVector result = gaus.backSubstitution();
+    result.print();
+    
 
     
     return 0;
