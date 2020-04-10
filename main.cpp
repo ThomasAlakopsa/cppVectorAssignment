@@ -168,17 +168,17 @@ int main()
      * Gaussian elimination
      * ***********************/
 
-    Matrix gaus = Matrix(3,3+1);
-    gaus.add(0,0,25); gaus.add(0,1,5); gaus.add(0,2,1); gaus.add(0,3,106.8);
-    gaus.add(1,0,64); gaus.add(1,1,8); gaus.add(1,2,1); gaus.add(1,3,177.2);
-    gaus.add(2,0,144); gaus.add(2,1,12); gaus.add(2,2,1); gaus.add(2,3,279.2);
-    gaus.print();
-    cout << endl;
-    gaus.orderForForwardElimination(0);
-    gaus.forwardElimination();
-    gaus.print();
-    ColVector result = gaus.backSubstitution();
-    result.print();
+    // Matrix gaus = Matrix(3,3+1);
+    // gaus.add(0,0,25); gaus.add(0,1,5); gaus.add(0,2,1); gaus.add(0,3,106.8);
+    // gaus.add(1,0,64); gaus.add(1,1,8); gaus.add(1,2,1); gaus.add(1,3,177.2);
+    // gaus.add(2,0,144); gaus.add(2,1,12); gaus.add(2,2,1); gaus.add(2,3,279.2);
+    // gaus.print();
+    // cout << endl;
+    // gaus.orderForForwardElimination(0);
+    // gaus.forwardElimination();
+    // gaus.print();
+    // ColVector result = gaus.backSubstitution();
+    // result.print();
     
 
     

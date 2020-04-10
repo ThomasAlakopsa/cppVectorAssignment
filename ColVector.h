@@ -8,6 +8,11 @@ using namespace std;
 
 class RowVector; // so transpose knows what RowVector is
 
+/**************************************************************************************
+ * Ik heb ColVector een aparte class gegeven voor overzichtelijkheid.
+ * De opdracht was erg onduidelijk over of alles nou in een class was gewenst of niet
+ * ************************************************************************************/
+
 class ColVector : public Matrix
 {
     public:
