@@ -5,180 +5,192 @@
 int main()
 {
 
-    // /******************************
-    //  * all the matrix calculations
-    //  *****************************/
+    /******************************
+     * all the matrix calculations
+     *****************************/
 
-    // Matrix myMatrix = Matrix(3,3);
-    // myMatrix.populate();
-    // cout << "the base matrix: " << endl;
-    // myMatrix.print();
-    // cout << endl;
+    Matrix baseMatrix = Matrix(3,3);
+    baseMatrix.populate();
+    cout << "the base matrix: " << endl;
+    baseMatrix.print();
+    cout << endl;
 
-    // Matrix newMatrix = myMatrix + myMatrix;
+    Matrix addMatrix = baseMatrix + baseMatrix;
 
-    // cout << "the addition matrix" << endl;
-    // newMatrix.print();
-    // cout << endl;
+    cout << "the addition matrix" << endl;
+    addMatrix.print();
+    cout << endl;
 
-    // Matrix newMatrix2 = newMatrix * 7;
-    // cout << "the addition matrix * 7" << endl;
-    // newMatrix2.print();
-    // cout << endl;
+    Matrix multplyMatrix = addMatrix * 7;
+    cout << "the addition matrix * 7" << endl;
+    multplyMatrix.print();
+    cout << endl;
 
-    // Matrix newMatrix3 = myMatrix - myMatrix;
-    // cout << "the base matrix - the multiplied matrix" << endl;
-    // newMatrix3.print();
-    // cout << endl;
+    Matrix subtractMatrix = multplyMatrix - baseMatrix;
+    cout << "the multiplied matrix - subtractMatrix" << endl;
+    subtractMatrix.print();
+    cout << endl;
 
 
-    // /***************************
-    //  * all the row calculations
-    //  * *************************/
+    /***************************
+     * all the row calculations
+     * *************************/
 
-    // RowVector myRow = RowVector(6);
-    // myRow.populate();
-    // cout << "the base row" << endl;
-    // myRow.print();
-    // cout << endl;
+    RowVector baseRow = RowVector(6);
+    baseRow.populate();
+    cout << "the base row" << endl;
+    baseRow.print();
+    cout << endl;
 
-    // cout << "the addition Row" << endl;
-    // RowVector newRow = myRow + myRow;
-    // newRow.print();
-    // cout << endl;
+    cout << "the baseRow + the baseRow" << endl;
+    RowVector addRow = baseRow + baseRow;
+    addRow.print();
+    cout << endl;
 
-    // cout << "the addition Row * 3" << endl;
-    // RowVector newRow2 = newRow * 3;
-    // newRow2.print();
-    // cout << endl;
+    cout << "the baseRow * 3" << endl;
+    RowVector multiplyRow = baseRow * 3;
+    multiplyRow.print();
+    cout << endl;
 
-    // cout << "the base row - the addition row" << endl;
-    // RowVector newRow3 = myRow - myRow;
-    // newRow3.print();
-    // cout << endl;
+    cout << "the multiplied row - the base row" << endl;
+    RowVector subtractRow = multiplyRow - baseRow;
+    subtractRow.print();
+    cout << endl;
 
-    // /****************************
-    //  * all the colum calculations
-    //  * **************************/
+    /****************************
+     * all the colum calculations
+     * **************************/
 
-    // ColVector myCol = ColVector(6);
-    // myCol.populate();
-    // cout << "the base Col" << endl;
-    // myCol.print();
-    // cout << endl;
+    ColVector baseCol = ColVector(6);
+    baseCol.populate();
+    cout << "the base Col" << endl;
+    baseCol.print();
+    cout << endl;
 
-    // cout << "the addition Col" << endl;
-    // ColVector newCol = myCol + myCol;
-    // newCol.print();
-    // cout << endl;
+    cout << "the baseCol + the baseCol" << endl;
+    ColVector addCol = baseCol + baseCol;
+    addCol.print();
+    cout << endl;
 
-    // cout << "the addition Col * 3" << endl;
-    // ColVector newCol2 = newCol * 3;
-    // newCol2.print();
-    // cout << endl;
+    cout << "the addition Col * 3" << endl;
+    ColVector multiplyCol = addCol * 3;
+    multiplyCol.print();
+    cout << endl;
 
-    // cout << "the base Col - the addition Col" << endl;
-    // ColVector newCol3 = myCol - myCol;
-    // newCol3.print();
-    // cout << endl;
+    cout << "the multiplyCol - the baseCol" << endl;
+    ColVector subtractCol = multiplyCol - baseCol;
+    subtractCol.print();
+    cout << endl;
 
     /***************
      * Transpose
      * *************/
     
-    // Matrix matrixToTranspose = Matrix(4,6);
-    // matrixToTranspose.populate();
-    // Matrix transposedMatrix = matrixToTranspose.transpose();
-    // transposedMatrix.print();
+    Matrix matrixToTranspose = Matrix(4,6);
+    matrixToTranspose.populate();
+    Matrix transposedMatrix = matrixToTranspose.transpose();
+    transposedMatrix.print();
 
-    // ColVector Tcv = ColVector(4);
-    // Tcv.populate();
-    // RowVector result = Tcv.transpose();
-    // result.print();
+    ColVector Tcv = ColVector(4);
+    Tcv.populate();
+    RowVector transposedCV = Tcv.transpose();
+    transposedCV.print();
 
-    // RowVector Trv = RowVector(4);
-    // Trv.populate();
-    // ColVector result2 = Trv.transpose();
-    // result2.print();
+    RowVector Trv = RowVector(4);
+    Trv.populate();
+    ColVector TransposedRV = Trv.transpose();
+    TransposedRV.print();
 
 
     /***************
      * dot product
      * *************/
 
-    // RowVector DPv1 = RowVector(4);
-    // DPv1.populate();
-    // double dotproduct = DPv1.dotProduct(DPv1);
-    // cout << dotproduct << endl;
+    RowVector DPv1 = RowVector(4);
+    DPv1.populate();
+    double dotproduct = DPv1.dotProduct(DPv1);
+    cout << dotproduct << endl;
 
-    // ColVector DPv2 = ColVector(4);
-    // DPv2.populate();
-    // double dotproduct2 = DPv2.dotProduct(DPv2);
-    // cout << dotproduct2 << endl;
+    ColVector DPv2 = ColVector(4);
+    DPv2.populate();
+    double dotproduct2 = DPv2.dotProduct(DPv2);
+    cout << dotproduct2 << endl;
 
     /*********************
     * cross product
     * ********************/
 
-    // RowVector CPvector1 = RowVector(3);
-    // CPvector1.add(0,0,3);
-    // CPvector1.add(0,1,5);
-    // CPvector1.add(0,2,-7);
-    // CPvector1.print();
+    RowVector CPvector1 = RowVector(3);
+    CPvector1.add(0,0,3);
+    CPvector1.add(0,1,5);
+    CPvector1.add(0,2,-7);
+    CPvector1.print();
 
-    // RowVector CPvector2 = RowVector(3);
-    // CPvector2.add(0,0,2);
-    // CPvector2.add(0,1,-6);
-    // CPvector2.add(0,2,4);
-    // CPvector2.print();
+    RowVector CPvector2 = RowVector(3);
+    CPvector2.add(0,0,2);
+    CPvector2.add(0,1,-6);
+    CPvector2.add(0,2,4);
+    CPvector2.print();
 
-    // RowVector crossProduct1 = CPvector1.crossProduct(CPvector2);
-    // crossProduct1.print();
+    RowVector crossProduct1 = CPvector1.crossProduct(CPvector2);
+    crossProduct1.print();
+    cout << endl;
 
-    // ColVector CPvector3 = ColVector(3);
-    // CPvector3.add(0,0,3);
-    // CPvector3.add(1,0,5);
-    // CPvector3.add(2,0,-7);
-    // CPvector3.print();
-    // cout << endl;
+    ColVector CPvector3 = ColVector(3);
+    CPvector3.add(0,0,3);
+    CPvector3.add(1,0,5);
+    CPvector3.add(2,0,-7);
+    CPvector3.print();
+    cout << endl;
 
-    // ColVector CPvector4 = ColVector(3);
-    // CPvector4.add(0,0,2);
-    // CPvector4.add(1,0,-6);
-    // CPvector4.add(2,0,4);
-    // CPvector4.print();
-    // cout << endl;
+    ColVector CPvector4 = ColVector(3);
+    CPvector4.add(0,0,2);
+    CPvector4.add(1,0,-6);
+    CPvector4.add(2,0,4);
+    CPvector4.print();
+    cout << endl;
 
-    // ColVector crossProduct2 = CPvector3.crossProduct(CPvector4);
-    // crossProduct2.print();
+    ColVector crossProduct2 = CPvector3.crossProduct(CPvector4);
+    crossProduct2.print();
+    cout << endl;
 
     /*************************
      * Matrix Multiplication
      * **********************/
 
-    // Matrix mm1 = Matrix(2,3);
-    // mm1.populate();
-    // Matrix mm2 = Matrix(3,2);
-    // mm2.populate();
+    Matrix mm1 = Matrix(2,3);
+    mm1.populate();
+    Matrix mm2 = Matrix(3,2);
+    mm2.populate();
 
-    // Matrix mmResult = mm1.multiply(mm2);
-    // mmResult.print();
+    Matrix mmResult = mm1.multiply(mm2);
+    mmResult.print();
+    cout << endl;
 
     /*************************
      * Gaussian elimination
      * ***********************/
 
-    // Matrix gaus = Matrix(3,3+1);
-    // gaus.add(0,0,25); gaus.add(0,1,5); gaus.add(0,2,1); gaus.add(0,3,106.8);
-    // gaus.add(1,0,64); gaus.add(1,1,8); gaus.add(1,2,1); gaus.add(1,3,177.2);
-    // gaus.add(2,0,144); gaus.add(2,1,12); gaus.add(2,2,1); gaus.add(2,3,279.2);
-    // gaus.print();
-    // cout << endl;
-    // gaus.orderForForwardElimination(0);
-    // gaus.forwardElimination();
-    // gaus.print();
-    // ColVector result = gaus.backSubstitution();
-    // result.print();
+    Matrix gaus = Matrix(3,3+1);
+    gaus.add(0,0,25); gaus.add(0,1,5); gaus.add(0,2,1); gaus.add(0,3,106.8);
+    gaus.add(1,0,64); gaus.add(1,1,8); gaus.add(1,2,1); gaus.add(1,3,177.2);
+    gaus.add(2,0,144); gaus.add(2,1,12); gaus.add(2,2,1); gaus.add(2,3,279.2);
+
+    cout << "the beginning matrix: " << endl;
+    gaus.print();
+    cout << endl;
+
+    //gaus.orderForForwardElimination(0);
+    gaus.forwardElimination();
+
+    cout << "Matrix after forward elimination: " << endl;
+    gaus.print();
+    cout << endl;
+
+    ColVector gausResult = gaus.backSubstitution();
+
+    cout << "result values: " << endl;
+    gausResult.print();
     
 
     
