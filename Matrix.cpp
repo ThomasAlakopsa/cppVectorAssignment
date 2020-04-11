@@ -308,23 +308,36 @@ void Matrix::orderForForwardElimination(int col)
  * Function for forwarelimination
  * *********************************/
 
+/***************************************************
+ * V[i][n] * multiplier = TempVector
+ * new row = V[i+1][n] - TempVector[n]
+ * 
+ * repeat this till everything under pivot is 0
+ * note* reorder the matrix when you get to a new collumn
+ * *************************************************/ 
+
 void Matrix::forwardElimination()
 {
-    int numberOfSteps = numberOfRows-1; // number of times to repeat forward elimination
-    int foo = 2; // 
+    // number of times to repeat forward elimination (used for how many zero their need to be, first 2 zero's then 1 zero)
+    int numberOfSteps = numberOfRows-1; 
 
-    for(int steps = 0; steps < numberOfRows-1; steps++)
+    int foo = 2; // helper value for the correct position in the 2dvectors.
+
+    for(int steps = 0; steps < numberOfRows-1; steps++) 
     {
         orderForForwardElimination(steps); // order the matrix
         foo-=1;
         
         for(int i = 0; i < numberOfSteps; i++)
         {
+            // calculate the multplier for the row
             double multiplier = a2DVector[foo][steps] / a2DVector[steps][steps];
 
             for(int j = 0; j < numberOfColumns;j++)
             {
+                // multiplie each value with the mutiplier and save it.
                 double temp = a2DVector[steps][j] * multiplier;
+                // subtract temp from the row below and you have the result.
                 a2DVector[foo][j]-=temp;
             } 
             foo+=1;
@@ -347,7 +360,7 @@ void Matrix::forwardElimination()
 
 ColVector Matrix::backSubstitution()
 {
-    ColVector result = ColVector(numberOfRows);
+    ColVector result = ColVector(numberOfRows); // create result 
 
     for(int i = numberOfRows-1; i >= 0; i--)
     {
